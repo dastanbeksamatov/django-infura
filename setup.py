@@ -1,7 +1,9 @@
 """Setup script for django-infura"""
 
 import os.path
-from setuptools import setup
+
+from setuptools import find_packages, setup
+
 # The directory containing this file
 HERE = os.path.abspath(os.path.dirname(__file__))
 
@@ -26,10 +28,13 @@ setup(
         "Programming Language :: Python :: 2",
         "Programming Language :: Python :: 3",
     ],
-    packages=["tx"],
+    packages=find_packages(include=['tx']),
     include_package_data=True,
     install_requires=[
-        "requests"
+        "requests",
+        "web3"
     ],
-    entry_points={"console_scripts": ["django-infura=tx.__main__:main"]},
+    setup_requires=['pytest-runner'],
+    test_suite='tests',
+    tests_require=['pytest==4.4.1', "python-decouple==3.4"],
 )
