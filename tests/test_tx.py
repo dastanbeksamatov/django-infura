@@ -1,6 +1,6 @@
 import pytest
 from decouple import config
-from app.infuradj import __setup, get_tx_details, send_tx
+from infuradj import __setup, get_tx_details, send_tx
 from web3.eth import Account
 
 NETWORK_IDS = {

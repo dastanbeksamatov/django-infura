@@ -1,5 +1,3 @@
-import asyncio
-
 from eth_utils.exceptions import ValidationError
 from requests import request
 from web3 import Account, Web3, exceptions, types

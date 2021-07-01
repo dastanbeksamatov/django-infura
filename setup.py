@@ -28,7 +28,7 @@ setup(
         "Programming Language :: Python :: 2",
         "Programming Language :: Python :: 3",
     ],
-    packages=find_packages(include=['app']),
+    packages=find_packages(include=['infuradj']),
     include_package_data=True,
     install_requires=[
         "web3"
