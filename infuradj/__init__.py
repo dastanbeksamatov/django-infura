@@ -2,5 +2,6 @@
     >>> from django_infura import send_tx
     >>> send_tx()
 """
-from tx.tx import send_tx, get_tx_details, __setup 
+from infuradj.tx import NETWORK_IDS, __setup, get_tx_details, send_tx
+
 __version__ = "1.0.0"

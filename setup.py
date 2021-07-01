@@ -1,4 +1,4 @@
-"""Setup script for django-infura"""
+"""Setup script for infuradj"""
 
 import os.path
 
@@ -13,7 +13,7 @@ with open(os.path.join(HERE, "README.md")) as fid:
 
 # This call to setup() does all the work
 setup(
-    name="django-infura",
+    name="infuradj",
     version="1.0.0",
     description="Send tx from Django with infura",
     long_description=README,
@@ -28,7 +28,7 @@ setup(
         "Programming Language :: Python :: 2",
         "Programming Language :: Python :: 3",
     ],
-    packages=find_packages(include=['tx']),
+    packages=find_packages(include=['infuradj']),
     include_package_data=True,
     install_requires=[
         "requests",
