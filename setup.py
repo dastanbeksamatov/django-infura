@@ -28,10 +28,9 @@ setup(
         "Programming Language :: Python :: 2",
         "Programming Language :: Python :: 3",
     ],
-    packages=find_packages(include=['infuradj']),
+    packages=find_packages(include=['app']),
     include_package_data=True,
     install_requires=[
-        "requests",
         "web3"
     ],
     setup_requires=['pytest-runner'],
