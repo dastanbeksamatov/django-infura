@@ -90,11 +90,12 @@ print("networks: {}".format(NETWORK_IDS.keys()))
 ```
 
 ## API
-### `send_tx(to, message, project_id, network, value=0, gas=90000)`
+### `send_tx(to, message, project_id, private_key, network, value=0, gas=90000)`
   Main exposed function that prepares the transaction and sends it to `infura.io` networks
 - `to: string` - account to sent to
 - `message: string` - data to append to tx
 - `project_id: string` - `infura` project id
+- `private_key: string` - account private keys for signing the tx
 - `network: string` - eth network (mainnet, polygon, kovan, etc.)
 - `value: integer` - amount to send (defaults to 0)
 - `gas: integer` - gas to spend (defaults to 90000)
