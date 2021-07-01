@@ -1,5 +1,5 @@
 """Django infura
-    >>> from django_infura import send_tx
+    >>> from infuradj import send_tx
     >>> send_tx()
 """
 from .lib import NETWORK_IDS, __setup, get_tx_details, send_tx

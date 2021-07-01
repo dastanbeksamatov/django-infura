@@ -1,5 +1,3 @@
-from eth_utils.exceptions import ValidationError
-from requests import request
 from web3 import Account, Web3, exceptions, types
 
 NETWORK_IDS = {
@@ -27,18 +25,18 @@ def send_tx(to, message, project_id, private_key, network, value=0, gas=90000):
         "value": value,
         "data": "0x{}".format(message.encode().hex()),
         "gasPrice": w3.eth.gas_price,
-        "gas": gas
+        "gas": gas,
     }
 
     try:
         sender = Account.from_key(private_key)
         tx['nonce'] = w3.eth.get_transaction_count(sender.address)
+        tx['chainId'] = NETWORK_IDS[network]
         signed_tx = sender.sign_transaction(tx)
         tx_hash = w3.eth.send_raw_transaction(signed_tx.rawTransaction, sender)
-        print("hash: {}".format(tx_hash.hex()))
         return tx_hash.hex()
     except ValueError:
-        raise ValueError("Incorrect tx details")
+        raise ValueError("Incorrect tx details: check private key and network")
     except TypeError:
         raise TypeError("Incorrect account bytes: make sure they are 20 bytes")
     except:

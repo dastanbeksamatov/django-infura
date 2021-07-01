@@ -14,7 +14,7 @@ with open(os.path.join(HERE, "README.md")) as fid:
 # This call to setup() does all the work
 setup(
     name="infuradj",
-    version="1.0.0",
+    version="1.0.1",
     description="Send tx from Django with infura",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -31,7 +31,7 @@ setup(
     packages=find_packages(include=['infuradj']),
     include_package_data=True,
     install_requires=[
-        "web3"
+        "web3==5.20.0"
     ],
     setup_requires=['pytest-runner'],
     test_suite='tests',
